@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login and To-Do List</title>
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+
+  <!-- Custom CSS -->
+  <style>
+    body {
+      background-color: #f27fad; /* Warna pink pada background */
+    }
+    .login-container {
+      max-width: 400px;
+      margin: 0 auto;
+      padding: 20px;
+      background-color: #fff;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+      margin-top: 100px;
+    }
+    .login-container h2 {
+      text-align: center;
+      color: #f27fad; /* Warna pink pada judul */
+      margin-bottom: 20px;
+    }
+    .form-group label {
+      font-weight: bold;
+    }
+    .btn-pink {
+      background-color: #f27fad; /* Warna pink pada tombol */
+      color: #fff;
+    }
+    .kegiatan-container {
+      max-width: 800px;
+      margin: 20px auto;
+      padding: 20px;
+      background-color: #fff;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    }
+    .kegiatan-container h1 {
+      text-align: center;
+      color: #f27fad; /* Warna pink pada judul */
+      margin-bottom: 20px;
+    }
+    .kegiatan-container h3 {
+      color: #f27fad; /* Warna pink pada subjudul */
+    }
+    .kegiatan-container ul {
+      list-style: none;
+      padding: 0;
+    }
+    .kegiatan-container li {
+      margin-bottom: 10px;
+      cursor: pointer;
+      transition: background-color 0.3s, color 0.3s; /* Efek transisi untuk latar belakang dan warna teks */
+    }
+    .kegiatan-container li:before {
+      content: "\f00c";
+      font-family: "Font Awesome 5 Free";
+      margin-right: 10px;
+      color: #f27fad; /* Warna ikon centang */
+      display: none;
+    }
+    .kegiatan-container li.checked {
+      background-color: #f27fad; /* Warna pink pada efek checked */
+      color: #fff; /* Warna teks pada efek checked */
+      border-radius: 4px;
+    }
+    .kegiatan-container li.checked:before {
+      display: inline-block; /* Tampilkan ikon centang saat elemen tercentang */
+    }
+    .kegiatan-container li:hover {
+      background-color: #fcc2e3; /* Warna pink lebih terang pada efek hover */
+    }
+    .kegiatan-container li:hover:before {
+      color: #fff; /* Warna ikon centang pada efek hover */
+    }
+
+    /* Atur tampilan untuk perangkat mobile (ponsel) */
+    @media (max-width: 576px) {
+      .kegiatan-container {
+        padding: 10px; /* Ubah padding agar lebih ramping pada perangkat mobile */
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="login-container">
+      <h2>HALLO BEB</h2>
+      <form action="isi.html" method="post">
+        <div class="form-group mb-3">
+          <label for="username">Username</label>
+          <input type="text" class="form-control" id="username" name="username" placeholder="Nana Kaci" required pattern="[Nn]ana [Kk]aci">
+          <!-- Pola validasi [Nn]ana [Kk]aci memastikan input diawali dengan "Nana Kaci" atau "nana kaci" -->
+        </div>
+        <div class="form-group mb-3">
+          <label for="password">Password</label>
+          <input type="password" class="form-control" id="password" name="password" placeholder="aniv4" required pattern="aniv4">
+          <!-- Pola validasi "aniv4" memastikan input password harus tepat "aniv4" -->
+        </div>
+        <div class="form-group">
+          <button type="submit" class="btn btn-pink btn-block">Login</button>
+        </div>
+      </form>
+    </div>
+
+    <div class="kegiatan-container">
+      <h1>TO DO LIST <3</h1>
+      <div class="row">
+        <div class="col-md-6">
+          <h3>List :</h3>
+          <ul class="list-group">
+            <li class="list-group-item" onclick="toggleCheck(this)">Long Trip 2gether</li>
+            <li class="list-group-item" onclick="toggleCheck(this)">Nonton FILM</li>
+            <li class="list-group-item" onclick="toggleCheck(this)">Hunting Steak</li>
+            <li class="list-group-item" onclick="toggleCheck(this)">Foto Studio</li>
+            <li class="list-group-item" onclick="toggleCheck(this)">Ke Gramedia</li>
+            <li class="list-group-item" onclick="toggleCheck(this)">Hunting Oleh-Oleh</li>
+            <li class="list-group-item" onclick="toggleCheck(this)">Cat Caffe Date</li>
+            <li class="list-group-item" onclick="toggleCheck(this)">Malioboro Date</li>
+            <li class="list-group-item" onclick="toggleCheck(this)">Alun-Alun Date</li>
+            <li class="list-group-item" onclick="toggleCheck(this)">Mall Date</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Bootstrap JS (Popper.js is required for Bootstrap's dropdown, tooltip, and popover features) -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
+  <script>
+    function toggleCheck(item) {
+      item.classList.toggle("checked");
+    }
+  </script>
+</body>
+</html>
